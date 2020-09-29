@@ -28,8 +28,8 @@ client.on('message', message => {
   if(message.author.bot) return;
 if (!message.guild) return message.reply('') 
   if (true) {
-if (message.content === prefix+'Admin') {
-      message.author.send('**\ـات\n\n<a:x2:712913420986351686> | ``%ct`` ⇏ لأنـشـاء روم كـتـابـي\n\n<a:x2:712913420986351686> | ``%cv`` ⇏ لأنـشـاء روم صـوتـي\n\n<a:x2:712913420986351686> | ``%clear`` ⇏ لـمـسـح عـدد مـعـيـن مـن الـرسـائـل\n---------------------------\n<a:8780_discord_geaz:760246326667116625> Bot Created by **<@742070589212327947>').catch(e => console.log(e.stack));
+if (message.content === prefix+'help') {
+      message.author.send('<a:600979328142016513:760246124174508062> | Giveaway Menu\n----------------------------\n<a:arrow:759533312191758366> | $start ⇏ لـبـدا قـيـفـاواي\n<a:arrow:759533312191758366> | %reroll ⇏ لاعـادة اخـتـيـار فـائـز اخـر\n<a:arrow:759533312191758366>  | $gend ⇏ لأنـهـاء الـقـيفـاواي\n----------------------------\n<a:8780_discord_geaz:760246326667116625> Bot Created by **<@742070589212327947>').catch(e => console.log(e.stack));
  
     }
    }
@@ -37,7 +37,7 @@ if (message.content === prefix+'Admin') {
 client.on('message', message => {
     if (message.author.bot) return;
 if (!message.guild) return message.reply('') 
-if (message.content === prefix+'Admin') {
+if (message.content === prefix+'help') {
 message.channel.send("<a:602496283844018206:759533294885797900> **-** **Done! Check Your DM**")
   }
    });
