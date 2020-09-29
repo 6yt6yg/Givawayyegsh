@@ -20,7 +20,7 @@ const ms = require('ms');
 const totime = require('to-time');
 const dbg = new Enmap({ name: 'Giveaway' });
 const prefix = '$';
-console.log("[ Giveaways is Lunched. ] - MoJRemGames");
+console.log("[ Giveaways is Lunched. ] - IBananaa ");
 
 //////////////////
 
@@ -50,7 +50,7 @@ client.on("ready", async () => {
           r =>
             r.author.id === client.user.id &&
             r.content ==
-              `**🎉 GIVEAWAY 🎉**`
+              `**🎉 قـيـف اواي 🎉**`
         );
         if (mess.size == 0) return;
         mess.forEach(m => {
@@ -79,13 +79,13 @@ client.on("ready", async () => {
             if (
               !m ||
               m.content ==
-                `🎉 **GIVEAWAY ENDED** 🎉`
+                `🎉 **انـتـهـاء قـيـف اواي ** 🎉`
             )
               return;
             let ttt = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10];
             if (ttt.includes(moment().diff(time2, "seconds")))
               return m.edit(
-                `🎉 **GIVEAWAY** 🎉`,
+                `🎉 **قـيـف اواي** 🎉`,
                 embed
                   .setColor("#ffb800")
                   .setDescription(
@@ -96,7 +96,7 @@ client.on("ready", async () => {
                   )
               );
             m.edit(
-              `🎉 **GIVEAWAY** 🎉`,
+              `🎉 **قـيـف اواي** 🎉`,
               embed.setDescription(
                 `React with 🎉 to enter!\nTime remaining: ${cd(
                   new Date().getTime(),
@@ -106,7 +106,7 @@ client.on("ready", async () => {
             );
             if (moment().isAfter(time2)) {
               m.reactions
-                .filter(a => a.emoji.name == "🎉")
+                .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
                 .map(r =>
                   r.fetchUsers().then(u => {
                     let rusers = u
@@ -120,7 +120,7 @@ client.on("ready", async () => {
                     );
                     if (
                       m.reactions
-                        .filter(a => a.emoji.name == "🎉")
+                        .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
                         .map(reaction => reaction.count)[0] <= 1
                     ) {
                       return m.channel.send(`No winners :rolling_eyes:`);
@@ -191,7 +191,7 @@ client.on("message", async message => {
         .setFooter(`Ended at`);
       let msg = await message.channel
         .send(
-          `**🎉 GIVEAWAY 🎉**`,
+          `**🎉 قـيـف اواي 🎉**`,
           embed
         )
         .catch(err => message.channel.send(`Error: \`${err}\``));
@@ -204,12 +204,12 @@ client.on("message", async message => {
           gwin: args[2]
         }
       );
-      await msg.react("🎉");
+      await msg.react("<a:600979328142016513:760246124174508062>");
       timer = setInterval(() => {
         if (
           !msg ||
           msg.content ==
-            `**🎉 GIVEAWAY ENDED 🎉**`
+            `**🎉 انـتـهـاء قـيـف اواي  🎉**`
         )
           return;
         let ttt = [-2, -3, -4, -5, -6, -7, -8, -9, -10];
@@ -226,7 +226,7 @@ client.on("message", async message => {
               )
           );
         msg.edit(
-          `**🎉 GIVEAWAY 🎉**`,
+          `**🎉 قـيـف اواي 🎉**`,
           embed.setDescription(
             `React with 🎉 to enter!\nTime remaining: ${cd(
               new Date().getTime(),
@@ -235,20 +235,20 @@ client.on("message", async message => {
           )
         );
         rusers = msg.reactions
-          .filter(a => a.emoji.name == "🎉")
+          .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
           .map(reaction =>
             reaction.users.filter(u => !u.bot).random(parseInt(args[2]))
           )[0];
         if (moment().isAfter(time)) {
           msg.edit(
-            `** GIVEAWAY ENDED 🎉**`,
+            `** انـتـهـاء قـيـف اواي 🎉**`,
             embed2
               .setTimestamp()
               .setDescription(`Winners:\n${rusers || "No winners"}`)
           );
           if (
             msg.reactions
-              .filter(a => a.emoji.name == "🎉")
+              .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
               .map(reaction => reaction.count)[0] <= 1
           ) {
             return message.channel.send(``);
@@ -283,7 +283,7 @@ client.on("message", async message => {
             return message.channel.send(`This is not a giveaway message.`);
           if (
             m.content !=
-            `**🎉 GIVEAWAY ENDED 🎉**`
+            `**🎉 انـتـهـاء قـيـف اواي  🎉**`
           )
             return message.channel.send(`The giveaway is not ended.`);
           if (m.reactions.size < 1)
@@ -292,12 +292,12 @@ client.on("message", async message => {
             );
           if (
             m.reactions
-              .filter(a => a.emoji.name == "🎉")
+              .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
               .map(reaction => reaction.count)[0] <= 1
           )
             return message.channel.send(``);
           m.reactions
-            .filter(a => a.emoji.name == "🎉")
+            .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
             .map(r =>
               r.fetchUsers().then(async u => {
                 let rusers = u.filter(user => !user.bot).random();
@@ -328,7 +328,7 @@ client.on("message", async message => {
             return message.channel.send(`This is not a giveaway message.`);
           if (
             m.content ==
-            `**🎉 GIVEAWAY ENDED 🎉**`
+            `**🎉 انـتـهـاء قـيـف اواي  🎉**`
           )
             return message.channel.send(`The giveaway is ended.`);
           if (m.reactions.size < 1)
@@ -346,7 +346,7 @@ client.on("message", async message => {
             .setAuthor(gv.gtext)
             .setFooter(`Ended at`);
           m.reactions
-            .filter(a => a.emoji.name == "🎉")
+            .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
             .map(r =>
               r.fetchUsers().then(async u => {
                 let rusers = u
@@ -360,7 +360,7 @@ client.on("message", async message => {
                 );
                 if (
                   m.reactions
-                    .filter(a => a.emoji.name == "🎉")
+                    .filter(a => a.emoji.name == "<a:600979328142016513:760246124174508062>")
                     .map(reaction => reaction.count)[0] <= 1
                 ) {
                   return message.channel.send(`No winners :rolling_eyes:`);
