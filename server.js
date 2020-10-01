@@ -23,7 +23,16 @@ const prefix = '$';
 console.log("[ Giveaways is Lunched. ] - IBananaa ");
 
 //////////////////
-
+/////[ STATUS ]////
+client.on('ready', () => {
+ client.user.setStatus("online")
+});
+client.on('ready', () => {
+     client.user.setActivity("$help │ Templates Shop",{type: 'playing'});
+ 
+});
+////
+//////////////////////
 client.on('message', message => {
   if(message.author.bot) return;
 if (!message.guild) return message.reply('') 
