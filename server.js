@@ -28,7 +28,7 @@ client.on('ready', () => {
  client.user.setStatus("online")
 });
 client.on('ready', () => {
-     client.user.setActivity("$help │ Templates Shop",{type: 'playing'});
+     client.user.setActivity("$help │ Shuruhatik",{type: 'playing'});
  
 });
 ////
@@ -175,7 +175,7 @@ client.on("message", async message => {
   if (args[0] == `${prefix}start`) {
     if (
       message.member.hasPermission("MANAGE_GUILD") ||
-      message.member.roles.find(r => r.name == "GIVEAWAYS")
+      message.member.roles.find(r => r.name == "Mod")////////حط اسم رتبة للي تبيه تقدر تسوي قيف اوايات هون بدل كلمة Mod
     ) {
       if (!args[1] || !args[2] || !args[3])
         return message.channel.send(
@@ -373,7 +373,7 @@ client.on("message", async message => {
                   .filter(user => !user.bot)
                   .random(parseInt(gv.gwin));
                 m.edit(
-                  `**🎉 GIVEAWAY ENDED 🎉**`,
+                  `**🎉 انـتـهـاء قـيـف اواي 🎉**`,
                   embed2
                     .setTimestamp()
                     .setDescription(`Winners:\n${rusers || "No winners"}`)
@@ -404,10 +404,10 @@ client.on("message", async message => {
 })
 
 
-client.login(process.env.MG_TOKEN)
+client.login(process.env.BOT_TOKEN)
 
 /*
 
-- [       All Copy Right Reserved For: MoJRemGames/MG      ] -
+- [       All Copy Right Reserved For: Shuruhatik  in YT     ] -
 
 */
